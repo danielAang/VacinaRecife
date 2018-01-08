@@ -10,9 +10,9 @@ public class Result {
 
     private String resource_id;
     private List<Fields> fields;
-    private List<Records> records;
+    private List<Vacina> records;
 
-    public Result(String resource_id, List<Fields> fields, List<Records> records) {
+    public Result(String resource_id, List<Fields> fields, List<Vacina> records) {
         this.resource_id = resource_id;
         this.fields = fields;
         this.records = records;
@@ -34,11 +34,11 @@ public class Result {
         this.fields = fields;
     }
 
-    public List<Records> getRecords() {
+    public List<Vacina> getRecords() {
         return records;
     }
 
-    public void setRecords(List<Records> records) {
+    public void setRecords(List<Vacina> records) {
         this.records = records;
     }
 }

@@ -1,6 +1,6 @@
 package br.com.recife.vacina.vacinarecife.service;
 
-import br.com.recife.vacina.vacinarecife.model.vacina.Data;
+import br.com.recife.vacina.vacinarecife.model.Data;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
