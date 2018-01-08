@@ -1,4 +1,4 @@
-package br.com.recife.vacina.vacinarecife.model.vacina;
+package br.com.recife.vacina.vacinarecife.model;
 
 /**
  * Created by morae on 06/01/2018.

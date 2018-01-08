@@ -1,4 +1,4 @@
-package br.com.recife.vacina.vacinarecife.model.vacina;
+package br.com.recife.vacina.vacinarecife.model;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ public class Result {
 
     private String resource_id;
     private List<Fields> fields;
-    private List<Vacina> records;
+    private List<Record> records;
 
-    public Result(String resource_id, List<Fields> fields, List<Vacina> records) {
+    public Result(String resource_id, List<Fields> fields, List<Record> records) {
         this.resource_id = resource_id;
         this.fields = fields;
         this.records = records;
@@ -34,11 +34,12 @@ public class Result {
         this.fields = fields;
     }
 
-    public List<Vacina> getRecords() {
+    public List<Record> getRecords() {
         return records;
     }
 
-    public void setRecords(List<Vacina> records) {
+    public void setRecords(List<Record> records) {
         this.records = records;
     }
+
 }

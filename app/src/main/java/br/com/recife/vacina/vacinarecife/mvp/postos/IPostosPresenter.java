@@ -5,4 +5,8 @@ package br.com.recife.vacina.vacinarecife.mvp.postos;
  */
 
 public interface IPostosPresenter {
+
+    void loadPostos();
+    void onDestroy();
+
 }

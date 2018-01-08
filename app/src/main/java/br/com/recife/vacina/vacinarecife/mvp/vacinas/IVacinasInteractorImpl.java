@@ -2,9 +2,9 @@ package br.com.recife.vacina.vacinarecife.mvp.vacinas;
 
 import java.util.List;
 
-import br.com.recife.vacina.vacinarecife.asynctask.RecordsAsyncTask;
+import br.com.recife.vacina.vacinarecife.asynctask.VacinasAsyncTask;
 import br.com.recife.vacina.vacinarecife.interfaces.AsyncResponse;
-import br.com.recife.vacina.vacinarecife.model.vacina.Records;
+import br.com.recife.vacina.vacinarecife.model.Record;
 
 /**
  * Created by morae on 06/01/2018.
@@ -16,13 +16,14 @@ public class IVacinasInteractorImpl implements IVacinasInteractor, AsyncResponse
     @Override
     public void loadVacinas(OnLoadVacinasFinish listener) {
         this.listener = listener;
-        RecordsAsyncTask task = new RecordsAsyncTask(this);
+        VacinasAsyncTask task = new VacinasAsyncTask(this);
         task.execute();
     }
 
     @Override
-    public void onAsyncFinish(List<Records> vacinas) {
-        listener.onLoadVacinasSuccess(vacinas);
+    public void onAsyncFinish(List<?> vacinas) {
+        List<Record> lst = (List<Record>) vacinas;
+        listener.onLoadVacinasSuccess(lst);
     }
 
     @Override

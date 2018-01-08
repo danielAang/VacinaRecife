@@ -2,7 +2,7 @@ package br.com.recife.vacina.vacinarecife.mvp.vacinas;
 
 import java.util.List;
 
-import br.com.recife.vacina.vacinarecife.model.vacina.Records;
+import br.com.recife.vacina.vacinarecife.model.Record;
 
 /**
  * Created by morae on 06/01/2018.
@@ -32,7 +32,7 @@ public class IVacinasPresenterImpl implements IVacinasPresenter, IVacinasInterac
     }
 
     @Override
-    public void onLoadVacinasSuccess(List<Records> records) {
+    public void onLoadVacinasSuccess(List<Record> records) {
         if (vacinasView != null) {
             vacinasView.dismissProgressDialog();
             vacinasView.loadVacinas(records);
