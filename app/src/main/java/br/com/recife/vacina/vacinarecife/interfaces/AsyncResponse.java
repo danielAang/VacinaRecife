@@ -8,5 +8,5 @@ import java.util.List;
 public interface AsyncResponse {
 
     void onAsyncFinish(List<?> records);
-    void onAsyncFinishError(String message);
+    void onAsyncFinishError(int message);
 }

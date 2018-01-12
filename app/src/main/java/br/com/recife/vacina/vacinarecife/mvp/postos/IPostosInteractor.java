@@ -12,7 +12,7 @@ public interface IPostosInteractor {
 
     interface OnLoadPostosFinish {
         void onLoadPostosSuccess(List<Record> records);
-        void onLoadPostosError(String message);
+        void onLoadPostosError(int message);
     }
     void loadPostos(IPostosInteractor.OnLoadPostosFinish listener);
 

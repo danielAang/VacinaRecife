@@ -29,7 +29,7 @@ public class IPostosInteractorImpl implements IPostosInteractor, AsyncResponse {
     }
 
     @Override
-    public void onAsyncFinishError(String message) {
+    public void onAsyncFinishError(int message) {
         if (listener != null) {
             listener.onLoadPostosError(message);
         }

@@ -11,7 +11,7 @@ public interface IVacinasInteractor {
 
     interface OnLoadVacinasFinish {
         void onLoadVacinasSuccess(List<Record> records);
-        void onLoadVacinasError(String message);
+        void onLoadVacinasError(int message);
     }
     void loadVacinas(OnLoadVacinasFinish listener);
 }

@@ -27,7 +27,7 @@ public class IVacinasInteractorImpl implements IVacinasInteractor, AsyncResponse
     }
 
     @Override
-    public void onAsyncFinishError(String message) {
+    public void onAsyncFinishError(int message) {
         listener.onLoadVacinasError(message);
     }
 }

@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import java.io.IOException;
 import java.util.List;
 
+import br.com.recife.vacina.vacinarecife.R;
 import br.com.recife.vacina.vacinarecife.interfaces.AsyncResponse;
 import br.com.recife.vacina.vacinarecife.model.Data;
 import br.com.recife.vacina.vacinarecife.model.Record;
@@ -30,6 +31,8 @@ public class PostosAsyncTask extends AsyncTask<Object, Integer, List<Record>> {
     protected void onPostExecute(List<Record> postos) {
         if (response != null) {
             response.onAsyncFinish(postos);
+        } else {
+            response.onAsyncFinishError(R.string.erro_carga_dados);
         }
     }
 
@@ -48,9 +51,7 @@ public class PostosAsyncTask extends AsyncTask<Object, Integer, List<Record>> {
             return data.getResult().getRecords();
         } catch (IOException e) {
             e.printStackTrace();
-            if (response != null)
-                response.onAsyncFinishError("Erro ao carregar dados.");
+            return null;
         }
-        return null;
     }
 }

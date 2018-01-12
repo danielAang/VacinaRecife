@@ -6,4 +6,6 @@
     <string name="strValidacaoDtNascimento">Informe a data de nascimento</string>
     <string name="ok">OK</string>
     <string name="erro_carga_dados">Erro ao carregar dados. Tente novamente</string>
+    <string name="sem_conexao">Não há conexão com a internet.</string>
+    <string name="erro_titulo">Atenção</string>
 </resources>

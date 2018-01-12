@@ -40,7 +40,7 @@ public class IVacinasPresenterImpl implements IVacinasPresenter, IVacinasInterac
     }
 
     @Override
-    public void onLoadVacinasError(String message) {
+    public void onLoadVacinasError(int message) {
         if (vacinasView != null) {
             vacinasView.dismissProgressDialog();
             vacinasView.showErro(message);

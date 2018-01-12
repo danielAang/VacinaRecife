@@ -40,7 +40,7 @@ public class IPostosPresenterImpl implements IPostosPresenter, IPostosInteractor
     }
 
     @Override
-    public void onLoadPostosError(String message) {
+    public void onLoadPostosError(int message) {
         if (view != null) {
             view.dismissProgressDialog();
             view.showErro(message);
