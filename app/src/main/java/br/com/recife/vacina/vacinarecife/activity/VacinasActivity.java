@@ -99,7 +99,7 @@ public class VacinasActivity extends Fragment implements IVacinasView {
                 (NotificationManager) getContext().getSystemService(Context.NOTIFICATION_SERVICE);
         // The id of the channel.
         int id = 123456789;
-        String channelId = "my_channel_01";
+        String channelId = "vacina_recife_channel";
         CharSequence name = getString(R.string.channel_name);
         String description = getString(R.string.channel_description);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
