@@ -1,12 +1,18 @@
 package br.com.recife.vacina.vacinarecife.activity;
 
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -85,6 +91,36 @@ public class VacinasActivity extends Fragment implements IVacinasView {
             adapter = new VacinaAdapter(records, getContext(), dataNascimento);
             lstVacinas.setAdapter(adapter);
         }
+    }
+
+    @Override
+    public void buildNotification() {
+        NotificationManager mNotificationManager =
+                (NotificationManager) getContext().getSystemService(Context.NOTIFICATION_SERVICE);
+        // The id of the channel.
+        int id = 123456789;
+        String channelId = "my_channel_01";
+        CharSequence name = getString(R.string.channel_name);
+        String description = getString(R.string.channel_description);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = new NotificationChannel(channelId, name, importance);
+            mChannel.setDescription(description);
+            mChannel.enableLights(true);
+            mChannel.setLightColor(Color.RED);
+            mChannel.enableVibration(true);
+            mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            mNotificationManager.createNotificationChannel(mChannel);
+        }
+        Notification notification = new NotificationCompat.Builder(getContext(), channelId)
+                .setContentTitle(name)
+                .setContentText(description)
+                .setBadgeIconType(R.mipmap.ic_launcher)
+                .setNumber(5)
+                .setSmallIcon(R.mipmap.ic_launcher_round)
+                .setAutoCancel(true)
+                .build();
+        mNotificationManager.notify(channelId, id, notification);
     }
 
     @Override

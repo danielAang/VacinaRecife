@@ -12,6 +12,7 @@ public interface IVacinasView {
     void showProgressDialog();
     void dismissProgressDialog();
     void loadVacinas(List<Record> records);
+    void buildNotification();
     void showErro(int message);
 
 }

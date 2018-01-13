@@ -36,6 +36,7 @@ public class IVacinasPresenterImpl implements IVacinasPresenter, IVacinasInterac
         if (vacinasView != null) {
             vacinasView.dismissProgressDialog();
             vacinasView.loadVacinas(records);
+            vacinasView.buildNotification();
         }
     }
 

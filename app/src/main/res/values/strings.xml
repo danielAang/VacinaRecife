@@ -8,4 +8,6 @@
     <string name="erro_carga_dados">Erro ao carregar dados. Tente novamente</string>
     <string name="sem_conexao">Não há conexão com a internet.</string>
     <string name="erro_titulo">Atenção</string>
+    <string name="channel_name">Vacine-se</string>
+    <string name="channel_description">Verifique as vacinas que você pode tomar</string>
 </resources>
